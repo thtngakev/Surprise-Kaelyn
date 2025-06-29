@@ -4,14 +4,63 @@
   <meta charset="UTF-8">
   <title>Kaelyn 💖</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    #loadingScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: black;
+      color: #ff69b4;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div id="loadingScreen">LOADING... PLEASE WAIT</div>
+
+  <div class="container hidden" id="main">
     <h1>Kaelyn, will you be my girlfriend?</h1>
-    <button id="yesBtn">YES 💖</button>
-    <canvas id="confetti"></canvas>
-    <audio id="yaySound" src="yay.mp3" preload="auto"></audio>
+    <div class="btn-group">
+      <button onclick="yesClick()">Yes</button>
+      <button onclick="noClick()">No</button>
+    </div>
   </div>
+
+  <div class="container hidden" id="messageScreen">
+    <h2>Kaelyn 💕</h2>
+    <p>
+      I know we haven’t known each other that long but I’ve really enjoyed every moment we have talked.  
+      You’re sweet, funny, beautiful, caring, understanding and you’re so easy to talk to.  
+      I feel like we understand each other and I’ve been thinking about this for these past few days  
+      and today our conversation has confirmed that I want a relationship with you fr fr.
+    </p>
+    <h3>I LOVE YOU (Yes I mean it)</h3>
+  </div>
+
+  <div class="container hidden" id="tryAgainScreen">
+    <h1>😔 Try Again?</h1>
+    <button onclick="resetPage()">Try Again</button>
+  </div>
+
+  <audio id="yaySound" src="yayy.mp3"></audio>
+  <audio id="buzzSound" src="buzzer.mp3"></audio>
+
   <script src="script.js"></script>
+  <script>
+    // Simulate loading delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').style.display = 'none';
+        document.getElementById('main').classList.remove('hidden');
+      }, 10000); // 10 seconds delay
+    });
+  </script>
 </body>
 </html>

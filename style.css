@@ -1,73 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffccf9;
   font-family: 'Press Start 2P', cursive;
-  color: #222;
+  background: linear-gradient(45deg, #ffc0cb, #ffff99, #add8e6);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #333;
   overflow: hidden;
 }
 
 .container {
-  text-align: center;
-  margin-top: 20%;
-  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border: 6px dashed #ff69b4;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 20px #ff69b4;
+  z-index: 10;
 }
 
-h1, p {
-  font-size: 20px;
-  color: #ff66c4;
-  text-shadow: 2px 2px #ffe347;
-  margin-bottom: 30px;
-}
-
-button {
-  background-color: #66ccff;
-  color: white;
+.btn-group button {
+  margin: 20px;
+  padding: 15px 30px;
+  font-size: 16px;
   border: none;
-  padding: 20px 40px;
-  font-size: 20px;
-  font-family: 'Press Start 2P', cursive;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  border-radius: 12px;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s;
 }
 
-button:hover {
+.btn-group button:hover {
   transform: scale(1.1);
-  background-color: #ff66c4;
 }
 
-#confetti {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.hidden {
+  display: none;
 }
 
 .heart {
   position: absolute;
   width: 30px;
   height: 30px;
-  background: url('https://i.imgur.com/QpB74Ef.png') no-repeat center center / contain;
-  animation: floatUp 2s ease-in-out forwards;
+  background-image: url('https://emoji.slack-edge.com/T024BE7LD/heart/9f56fd83bbbd9e39.png');
+  background-size: cover;
+  animation: float 2s ease-out forwards;
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-200px); opacity: 0; }
-}
-
-/* Page 2 */
-.flower-bg {
-  background: url('https://i.imgur.com/yfRMJ2z.png') repeat;
-  background-size: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) scale(1.5);
+    opacity: 0;
+  }
 }
